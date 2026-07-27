@@ -13,7 +13,7 @@ A lightweight Go library that simplifies console applications.
 ## ✨ Features
 
 - 📥 Easy input functions
-- 📝 Fuctions for text
+- 📝 Functions for text
 - and more (*coming soon*)
 
 ---

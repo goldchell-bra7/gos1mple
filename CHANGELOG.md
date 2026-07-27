@@ -13,3 +13,12 @@
 - ReadStringln()
 - ReadBool()
 - ReadBoolln()
+
+## v0.2.0
+
+### Added
+
+- Text package
+- Header()
+- Separator
+- New examples
