@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/goldchell-bra7/gos1mple/main/docs/Polish_20260726_151540462.png" alt="gos1mple banner">
+  <img src="https://raw.githubusercontent.com/goldchell-bra7/gos1mple/main/docs/gopher-gos1mple.png" alt="gos1mple banner">
 </p>
 
 <h1 align="center">gos1mple</h1>
@@ -13,6 +13,7 @@ A lightweight Go library that simplifies console applications.
 ## ✨ Features
 
 - 📥 Easy input functions
+- 📝 Fuctions for text
 - and more (*coming soon*)
 
 ---
@@ -20,9 +21,14 @@ A lightweight Go library that simplifies console applications.
 ## 📦 Installation
 
 ```bash
-go get github.com/goldchell-bra7/gos1mple
+go get github.com/goldchell-bra7/gos1mple@latest
 ```
 
+*or*
+
+```bash
+go get github.com/goldchell-bra7/gos1mple@v0.1.0
+```
 ---
 
 ## 🚀 Usage
@@ -58,6 +64,13 @@ func main() {
 | `ReadStringln()` | Read string with prompt on new line |
 | `ReadBool()` | Read bool |
 | `ReadBoolln()` | Read bool with prompt on new line |
+
+## Text
+
+| Function | Description |
+|----------|-------------|
+| `Header()` | Places your text in a frame |
+| `Separator()` | Inserts a separator |
 
 ---
 
