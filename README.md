@@ -27,7 +27,7 @@ go get github.com/goldchell-bra7/gos1mple@latest
 *or*
 
 ```bash
-go get github.com/goldchell-bra7/gos1mple@v0.1.0
+go get github.com/goldchell-bra7/gos1mple@v0.2.0
 ```
 ---
 
