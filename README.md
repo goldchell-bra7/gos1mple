@@ -85,7 +85,7 @@ func main() {
 |----------|-------------|
 | `Term(text, colorConst string)` | Prints terminal text in the selected color |
 
-###Constants
+### Constants
 
 - `Red`
 - `BrightRed`
