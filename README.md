@@ -14,6 +14,7 @@ A lightweight Go library that simplifies console applications.
 
 - 📥 Easy input functions
 - 📝 Functions for text
+- 🌈 Colors for text
 - and more (*coming soon*)
 
 ---
@@ -27,7 +28,7 @@ go get github.com/goldchell-bra7/gos1mple@latest
 *or*
 
 ```bash
-go get github.com/goldchell-bra7/gos1mple@v0.2.0
+go get github.com/goldchell-bra7/gos1mple@v0.3.0
 ```
 ---
 
@@ -56,21 +57,61 @@ func main() {
 
 | Function | Description |
 |----------|-------------|
-| `ReadInt()` | Read integer |
-| `ReadIntln()` | Read integer with prompt on new line |
-| `ReadFloat()` | Read float64 |
-| `ReadFloatln()` | Read float64 with prompt on new line |
-| `ReadString()` | Read string |
-| `ReadStringln()` | Read string with prompt on new line |
-| `ReadBool()` | Read bool |
-| `ReadBoolln()` | Read bool with prompt on new line |
+| `ReadInt(prompt string)` | Read integer |
+| `ReadIntln(prompt string)` | Read integer with prompt on new line |
+| `ReadFloat(prompt string)` | Read float64 |
+| `ReadFloatln(prompt string)` | Read float64 with prompt on new line |
+| `ReadString(prompt string)` | Read string |
+| `ReadStringln(prompt string)` | Read string with prompt on new line |
+| `ReadBool(prompt string)` | Read bool |
+| `ReadBoolln(prompt string)` | Read bool with prompt on new line |
 
 ## Text
 
 | Function | Description |
 |----------|-------------|
-| `Header()` | Places your text in a frame |
-| `Separator()` | Inserts a separator |
+| `Header(text, symbol string, width int)` | Places your text in a frame |
+| `Separator(symbol string, width int)` | Inserts a separator |
+| `Bold(prompt string)` | Makes text bold |
+| `Cursive(prompt string)` | Makes text cursive |
+| `Underline(prompt string)` | Underlines the text |
+| `Strike(prompt string)` | Strikes through the text |
+
+## Color
+
+### Functions
+
+| Function | Description |
+|----------|-------------|
+| `Term(text, colorConst string)` | Prints terminal text in the selected color |
+
+###Constants
+
+- `Red`
+- `BrightRed`
+- `FillRed`
+- `Green`
+- `BrightGreen`
+- `FillGreen`
+- `Blue`
+- `BrightBlue`
+- `FillBlue`
+- `Black`
+- `BrightBlack`
+- `FillBlack`
+- `Yellow`
+- `BrightYellow`
+- `FillYellow`
+- `Magenta`
+- `BrightMagenta`
+- `FillMagenta`
+- `Cyan`
+- `BrightCyan`
+- `FillCyan`
+- `White`
+- `BrightWhite`
+- `FillWhite`
+- `Reset`
 
 ---
 

@@ -22,3 +22,18 @@
 - Header()
 - Separator
 - New examples
+
+## v0.3.0
+
+### Added
+
+- Color package
+- Term()
+- Color constants
+
+*In the text package: *
+
+- Bold()
+- Cursive()
+- Underline()
+- Strike()
