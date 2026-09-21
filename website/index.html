@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gos1mple — A Simple Go Library for Console Apps</title>
+  <meta name="description" content="A lightweight Go library that simplifies console applications with easy input, text formatting, and color functions.">
+  <script>
+    (function(){try{var t=new URLSearchParams(window.location.search).get('theme')||localStorage.getItem('gos1mple-theme')||sessionStorage.getItem('gos1mple-theme')||(document.cookie.match(/(?:^|;\s*)gos1mple-theme=([^;]+)/)||[])[1];if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){t='dark';}document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){}})();
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- ─── Navigation ──────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="./" class="nav__logo">
+        <div class="nav__logo-icon">Go</div>
+        gos1mple
+      </a>
+
+      <button class="nav__hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__links">
+        <li><a href="./" class="nav__link nav__link--active">Home</a></li>
+        <li><a href="examples/" class="nav__link">Examples</a></li>
+        <li><a href="api/" class="nav__link">API</a></li>
+        <li><a href="install/" class="nav__link" data-modal="install">Install</a></li>
+        <li><button class="theme-toggle" aria-label="Toggle theme">🌙</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ─── Hero Section ──────────────────────────────────── -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__badge">
+          <span class="hero__badge-dot"></span>
+          v0.3.0 — Latest Release
+        </div>
+
+        <h1 class="hero__title">
+          Console Apps<br>Made <span>Simple</span>
+        </h1>
+
+        <p class="hero__subtitle">
+          A lightweight Go library that simplifies console applications
+          with easy input handling, text formatting, and colorful terminal output.
+        </p>
+
+        <div class="hero__actions">
+          <a href="install/" class="btn btn--primary" data-modal="install">
+            ⬇ Install gos1mple
+          </a>
+          <a href="https://github.com/goldchell-bra7/gos1mple" target="_blank" rel="noopener" class="btn btn--secondary">
+            ☆ View on GitHub
+          </a>
+        </div>
+
+        <img src="docs/gopher-gos1mple.png" alt="gos1mple — A simple Go library" class="hero__gopher" loading="lazy">
+
+        <div class="features">
+          <div class="feature">
+            <div class="feature__icon">⚡</div>
+            <div>
+              <strong>Fast</strong>
+              <div style="font-size:0.82rem;color:var(--text-muted)">Built with performance in mind</div>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">{ }</div>
+            <div>
+              <strong>Simple</strong>
+              <div style="font-size:0.82rem;color:var(--text-muted)">Clean API, easy to use</div>
+            </div>
+          </div>
+          <div class="feature">
+            <div class="feature__icon">✓</div>
+            <div>
+              <strong>Reliable</strong>
+              <div style="font-size:0.82rem;color:var(--text-muted)">Well-tested, stable and secure</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Usage Examples Section ─────────────────────────── -->
+    <section class="section section--alt" id="examples">
+      <div class="container">
+        <span class="section__label">📖 Quick Start</span>
+        <h2 class="section__title">Usage Examples</h2>
+        <p class="section__desc">
+          Get up and running in seconds. Here are a few examples showing the core functionality of gos1mple.
+        </p>
+
+        <div class="examples-grid">
+          <!-- Example 1: Basic Input -->
+          <div class="example-item">
+            <div class="example-item__info">
+              <h3>Reading User Input</h3>
+              <p>Use the <code>input</code> package to easily read typed values from the console.</p>
+            </div>
+            <div class="code-block">
+              <div class="code-block__header">
+                <div class="code-block__dots">
+                  <span class="code-block__dot code-block__dot--red"></span>
+                  <span class="code-block__dot code-block__dot--yellow"></span>
+                  <span class="code-block__dot code-block__dot--green"></span>
+                </div>
+                <span>main.go</span>
+                <button class="code-block__copy" data-copy>Copy</button>
+              </div>
+<pre><code><span class="kw">package</span> main
+
+<span class="kw">import</span> (
+    <span class="str">"fmt"</span>
+
+    <span class="str">"github.com/goldchell-bra7/gos1mple/input"</span>
+)
+
+<span class="kw">func</span> <span class="fn">main</span>() {
+    age := input.<span class="fn">ReadInt</span>(<span class="str">"Age: "</span>)
+    fmt.<span class="fn">Println</span>(age)
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Example 2: Text Formatting -->
+          <div class="example-item">
+            <div class="example-item__info">
+              <h3>Text Formatting</h3>
+              <p>Create headers, separators, and styled text with the <code>text</code> package.</p>
+            </div>
+            <div class="code-block">
+              <div class="code-block__header">
+                <div class="code-block__dots">
+                  <span class="code-block__dot code-block__dot--red"></span>
+                  <span class="code-block__dot code-block__dot--yellow"></span>
+                  <span class="code-block__dot code-block__dot--green"></span>
+                </div>
+                <span>format.go</span>
+                <button class="code-block__copy" data-copy>Copy</button>
+              </div>
+<pre><code><span class="kw">package</span> main
+
+<span class="kw">import</span> (
+    <span class="str">"fmt"</span>
+
+    <span class="str">"github.com/goldchell-bra7/gos1mple/text"</span>
+)
+
+<span class="kw">func</span> <span class="fn">main</span>() {
+    fmt.<span class="fn">Println</span>(text.<span class="fn">Bold</span>(<span class="str">"Hello"</span>))
+    fmt.<span class="fn">Println</span>(text.<span class="fn">Cursive</span>(<span class="str">"Hello"</span>))
+    fmt.<span class="fn">Println</span>(text.<span class="fn">Underline</span>(<span class="str">"Hello"</span>))
+    fmt.<span class="fn">Println</span>(text.<span class="fn">Strike</span>(<span class="str">"Hello"</span>))
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Example 3: Colors -->
+          <div class="example-item">
+            <div class="example-item__info">
+              <h3>Colorful Output</h3>
+              <p>Apply colors to your terminal output effortlessly with the <code>color</code> package.</p>
+            </div>
+            <div class="code-block">
+              <div class="code-block__header">
+                <div class="code-block__dots">
+                  <span class="code-block__dot code-block__dot--red"></span>
+                  <span class="code-block__dot code-block__dot--yellow"></span>
+                  <span class="code-block__dot code-block__dot--green"></span>
+                </div>
+                <span>colors.go</span>
+                <button class="code-block__copy" data-copy>Copy</button>
+              </div>
+<pre><code><span class="kw">package</span> main
+
+<span class="kw">import</span> (
+    <span class="str">"fmt"</span>
+
+    <span class="str">"github.com/goldchell-bra7/gos1mple/color"</span>
+)
+
+<span class="kw">func</span> <span class="fn">main</span>() {
+    fmt.<span class="fn">Println</span>(color.<span class="fn">Term</span>(<span class="str">"Red"</span>, color.Red))
+    fmt.<span class="fn">Println</span>(color.<span class="fn">Term</span>(<span class="str">"Green"</span>, color.Green))
+    fmt.<span class="fn">Println</span>(color.<span class="fn">Term</span>(<span class="str">"Blue"</span>, color.Blue))
+    fmt.<span class="fn">Println</span>(color.<span class="fn">Term</span>(<span class="str">"Cyan"</span>, color.Cyan))
+}</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <a href="examples/" class="btn btn--secondary">
+            View All Examples →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── API Section ───────────────────────────────────── -->
+    <section class="section" id="api">
+      <div class="container">
+        <span class="section__label">📦 Packages</span>
+        <h2 class="section__title">API Overview</h2>
+        <p class="section__desc">
+          gos1mple is organized into three clean packages, each handling a specific aspect of console applications.
+        </p>
+
+        <div class="card-grid">
+          <a href="api/input/" class="card">
+            <div class="card__icon">📥</div>
+            <h3 class="card__title">input</h3>
+            <p class="card__desc">
+              Read integers, floats, strings, and booleans from the console with simple one-line function calls.
+            </p>
+            <span class="card__tag">8 Functions</span>
+          </a>
+
+          <a href="api/text/" class="card">
+            <div class="card__icon">📝</div>
+            <h3 class="card__title">text</h3>
+            <p class="card__desc">
+              Format your terminal output with headers, separators, bold, italic, underline, and strikethrough text.
+            </p>
+            <span class="card__tag">6 Functions</span>
+          </a>
+
+          <a href="api/color/" class="card">
+            <div class="card__icon">🌈</div>
+            <h3 class="card__title">color</h3>
+            <p class="card__desc">
+              Colorize terminal text with 24 built-in ANSI color constants including standard, bright, and background fills.
+            </p>
+            <span class="card__tag">1 Function + 25 Constants</span>
+          </a>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px;">
+          <a href="api/" class="btn btn--secondary">
+            Full API Reference →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ─── Footer ──────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__copy">© 2026 gos1mple · MIT License</span>
+        <ul class="footer__links">
+          <li>
+            <a href="https://github.com/goldchell-bra7" target="_blank" rel="noopener" class="footer__link">
+              <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://t.me/jarik_direct_bot" target="_blank" rel="noopener" class="footer__link">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              Telegram Bot
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── Install Modal (macOS style) ─────────────────────── -->
+  <div class="modal-overlay">
+    <div class="modal">
+      <div class="modal__titlebar">
+        <div class="modal__dots">
+          <span class="modal__dot modal__dot--red"></span>
+          <span class="modal__dot modal__dot--yellow"></span>
+          <span class="modal__dot modal__dot--green"></span>
+        </div>
+        <span class="modal__titlebar-text">Install gos1mple</span>
+      </div>
+      <div class="modal__body">
+        <h3>Quick Installation</h3>
+        <p>Get started with gos1mple in just two steps.</p>
+
+        <div class="modal__step">
+          <div class="modal__step-num">1</div>
+          <div class="modal__step-content">
+            <p>Install the latest version</p>
+            <div class="install-cmd">
+              <span class="install-cmd__prefix">$</span>
+              <span class="install-cmd__text">go get github.com/goldchell-bra7/gos1mple@latest</span>
+              <button class="install-cmd__copy" data-copy="go get github.com/goldchell-bra7/gos1mple@latest">Copy</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal__step">
+          <div class="modal__step-num">2</div>
+          <div class="modal__step-content">
+            <p>Or a specific version</p>
+            <div class="install-cmd">
+              <span class="install-cmd__prefix">$</span>
+              <span class="install-cmd__text">go get github.com/goldchell-bra7/gos1mple@v0.3.0</span>
+              <button class="install-cmd__copy" data-copy="go get github.com/goldchell-bra7/gos1mple@v0.3.0">Copy</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal__step">
+          <div class="modal__step-num">3</div>
+          <div class="modal__step-content">
+            <p>Import in your Go file</p>
+            <div class="code-block">
+              <div class="code-block__header">
+                <div class="code-block__dots">
+                  <span class="code-block__dot code-block__dot--red"></span>
+                  <span class="code-block__dot code-block__dot--yellow"></span>
+                  <span class="code-block__dot code-block__dot--green"></span>
+                </div>
+                <span>main.go</span>
+                <button class="code-block__copy" data-copy>Copy</button>
+              </div>
+<pre><code><span class="kw">import</span> (
+    <span class="str">"github.com/goldchell-bra7/gos1mple/input"</span>
+    <span class="str">"github.com/goldchell-bra7/gos1mple/text"</span>
+    <span class="str">"github.com/goldchell-bra7/gos1mple/color"</span>
+)</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <a href="https://github.com/goldchell-bra7/gos1mple" target="_blank" rel="noopener" class="btn btn--secondary btn--sm">View on GitHub</a>
+        <button class="btn btn--primary btn--sm" data-close-modal>Done</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

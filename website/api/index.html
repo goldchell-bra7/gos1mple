@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Reference — gos1mple</title>
+  <meta name="description" content="Complete API reference for the gos1mple Go library — input, text, and color packages.">
+  <script>
+    (function(){try{var t=new URLSearchParams(window.location.search).get('theme')||localStorage.getItem('gos1mple-theme')||sessionStorage.getItem('gos1mple-theme')||(document.cookie.match(/(?:^|;\s*)gos1mple-theme=([^;]+)/)||[])[1];if(!t&&window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches){t='dark';}document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){}})();
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+
+  <!-- ─── Navigation ──────────────────────────────────────── -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="../" class="nav__logo">
+        <div class="nav__logo-icon">Go</div>
+        gos1mple
+      </a>
+
+      <button class="nav__hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__links">
+        <li><a href="../" class="nav__link">Home</a></li>
+        <li><a href="../examples/" class="nav__link">Examples</a></li>
+        <li><a href="./" class="nav__link nav__link--active">API</a></li>
+        <li><a href="../install/" class="nav__link" data-modal="install">Install</a></li>
+        <li><button class="theme-toggle" aria-label="Toggle theme">🌙</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container container--narrow">
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a href="../">Home</a>
+        <span class="breadcrumb__sep">›</span>
+        <span>API Reference</span>
+      </div>
+
+      <div class="page-header">
+        <h1 class="page-header__title">API Reference</h1>
+        <p class="page-header__desc">
+          Comprehensive documentation for the <code>gos1mple</code> ecosystem. The library provides three modular packages engineered to make terminal interaction fast, intuitive, and visually pleasing.
+        </p>
+      </div>
+
+      <!-- ─── Package Cards ────────────────────────────────── -->
+      <section class="section">
+        <span class="section__label">📦 Packages</span>
+        <div class="card-grid">
+          <a href="input/" class="card">
+            <div class="card__icon">📥</div>
+            <h3 class="card__title">input</h3>
+            <p class="card__desc">
+              Centralized, type-safe functions for capturing console user inputs (integers, floats, strings, booleans) with inline or newline prompts.
+            </p>
+            <span class="card__tag">8 Functions</span>
+          </a>
+
+          <a href="text/" class="card">
+            <div class="card__icon">📝</div>
+            <h3 class="card__title">text</h3>
+            <p class="card__desc">
+              Lightweight formatting utilities for terminal text, including centered framed headers, horizontal dividers, bold, cursive, underline, and strikethrough.
+            </p>
+            <span class="card__tag">6 Functions</span>
+          </a>
+
+          <a href="color/" class="card">
+            <div class="card__icon">🌈</div>
+            <h3 class="card__title">color</h3>
+            <p class="card__desc">
+              ANSI color output helpers featuring the <code>Term()</code> function and 25 color constants spanning standard, bright, and background palette fills.
+            </p>
+            <span class="card__tag">1 Function · 25 Constants</span>
+          </a>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- ─── Input Summary Table ──────────────────────────── -->
+      <section class="section" id="input-summary">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+          <div>
+            <span class="section__label">Package</span>
+            <h2 class="section__title" style="margin-bottom:4px;">input</h2>
+          </div>
+          <a href="input/" class="btn btn--secondary btn--sm">Full input Docs →</a>
+        </div>
+        <p class="section__desc" style="margin-bottom:20px;">
+          Import path: <code>github.com/goldchell-bra7/gos1mple/input</code>
+        </p>
+
+        <table class="api-table">
+          <thead>
+            <tr>
+              <th>Function Signature</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>ReadInt(prompt string) int</code></td>
+              <td>Prompts and reads a single integer on the same line</td>
+            </tr>
+            <tr>
+              <td><code>ReadIntln(prompt string) int</code></td>
+              <td>Prints prompt on a new line and reads an integer</td>
+            </tr>
+            <tr>
+              <td><code>ReadFloat(prompt string) float64</code></td>
+              <td>Prompts and reads a 64-bit floating-point number</td>
+            </tr>
+            <tr>
+              <td><code>ReadFloatln(prompt string) float64</code></td>
+              <td>Prints prompt on a new line and reads a float64</td>
+            </tr>
+            <tr>
+              <td><code>ReadString(prompt string) string</code></td>
+              <td>Prompts and reads a whitespace-delimited single word</td>
+            </tr>
+            <tr>
+              <td><code>ReadStringln(prompt string) string</code></td>
+              <td>Prints prompt on a new line and reads a string</td>
+            </tr>
+            <tr>
+              <td><code>ReadBool(prompt string) bool</code></td>
+              <td>Prompts and reads a boolean flag (<code>true</code>/<code>false</code>)</td>
+            </tr>
+            <tr>
+              <td><code>ReadBoolln(prompt string) bool</code></td>
+              <td>Prints prompt on a new line and reads a boolean value</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- ─── Text Summary Table ───────────────────────────── -->
+      <section class="section" id="text-summary">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+          <div>
+            <span class="section__label">Package</span>
+            <h2 class="section__title" style="margin-bottom:4px;">text</h2>
+          </div>
+          <a href="text/" class="btn btn--secondary btn--sm">Full text Docs →</a>
+        </div>
+        <p class="section__desc" style="margin-bottom:20px;">
+          Import path: <code>github.com/goldchell-bra7/gos1mple/text</code>
+        </p>
+
+        <table class="api-table">
+          <thead>
+            <tr>
+              <th>Function Signature</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>Header(text, symbol string, width int) string</code></td>
+              <td>Creates a balanced framed banner with UTF-8 rune centering</td>
+            </tr>
+            <tr>
+              <td><code>Separator(symbol string, width int) string</code></td>
+              <td>Generates a horizontal divider repeating the given character</td>
+            </tr>
+            <tr>
+              <td><code>Bold(prompt string) string</code></td>
+              <td>Wraps text with ANSI bold formatting (<code>\033[1m</code>)</td>
+            </tr>
+            <tr>
+              <td><code>Cursive(prompt string) string</code></td>
+              <td>Wraps text with ANSI italic formatting (<code>\033[3m</code>)</td>
+            </tr>
+            <tr>
+              <td><code>Underline(prompt string) string</code></td>
+              <td>Wraps text with ANSI underline formatting (<code>\033[4m</code>)</td>
+            </tr>
+            <tr>
+              <td><code>Strike(prompt string) string</code></td>
+              <td>Wraps text with ANSI strikethrough formatting (<code>\033[9m</code>)</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- ─── Color Summary Table ──────────────────────────── -->
+      <section class="section" id="color-summary">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+          <div>
+            <span class="section__label">Package</span>
+            <h2 class="section__title" style="margin-bottom:4px;">color</h2>
+          </div>
+          <a href="color/" class="btn btn--secondary btn--sm">Full color Docs →</a>
+        </div>
+        <p class="section__desc" style="margin-bottom:20px;">
+          Import path: <code>github.com/goldchell-bra7/gos1mple/color</code>
+        </p>
+
+        <table class="api-table">
+          <thead>
+            <tr>
+              <th>Identifier</th>
+              <th>Type / Signature</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>Term()</code></td>
+              <td><code>func(text, colorConst string) string</code></td>
+              <td>Wraps text in ANSI sequence and appends reset code</td>
+            </tr>
+            <tr>
+              <td>Standard Colors</td>
+              <td><code>const string (8 colors)</code></td>
+              <td><code>Red</code>, <code>Green</code>, <code>Blue</code>, <code>Black</code>, <code>Yellow</code>, <code>Magenta</code>, <code>Cyan</code>, <code>White</code></td>
+            </tr>
+            <tr>
+              <td>Bright Colors</td>
+              <td><code>const string (8 colors)</code></td>
+              <td><code>BrightRed</code>, <code>BrightGreen</code>, <code>BrightBlue</code>, <code>BrightBlack</code>, etc.</td>
+            </tr>
+            <tr>
+              <td>Fill Colors</td>
+              <td><code>const string (8 colors)</code></td>
+              <td><code>FillRed</code>, <code>FillGreen</code>, <code>FillBlue</code>, <code>FillBlack</code>, etc.</td>
+            </tr>
+            <tr>
+              <td><code>Reset</code></td>
+              <td><code>const string</code></td>
+              <td>Restores default terminal foreground and background (<code>\033[0m</code>)</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ─── Footer ──────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <span class="footer__copy">© 2026 gos1mple · MIT License</span>
+        <ul class="footer__links">
+          <li>
+            <a href="https://github.com/goldchell-bra7" target="_blank" rel="noopener" class="footer__link">
+              <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://t.me/jarik_direct_bot" target="_blank" rel="noopener" class="footer__link">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              Telegram Bot
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── Install Modal (macOS style) ─────────────────────── -->
+  <div class="modal-overlay">
+    <div class="modal">
+      <div class="modal__titlebar">
+        <div class="modal__dots">
+          <span class="modal__dot modal__dot--red"></span>
+          <span class="modal__dot modal__dot--yellow"></span>
+          <span class="modal__dot modal__dot--green"></span>
+        </div>
+        <span class="modal__titlebar-text">Install gos1mple</span>
+      </div>
+      <div class="modal__body">
+        <h3>Quick Installation</h3>
+        <p>Get started with gos1mple in your Go project.</p>
+
+        <div class="modal__step">
+          <div class="modal__step-num">1</div>
+          <div class="modal__step-content">
+            <p>Download latest version</p>
+            <div class="install-cmd">
+              <span class="install-cmd__prefix">$</span>
+              <span class="install-cmd__text">go get github.com/goldchell-bra7/gos1mple@latest</span>
+              <button class="install-cmd__copy" data-copy="go get github.com/goldchell-bra7/gos1mple@latest">Copy</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal__step">
+          <div class="modal__step-num">2</div>
+          <div class="modal__step-content">
+            <p>Or pin to v0.3.0</p>
+            <div class="install-cmd">
+              <span class="install-cmd__prefix">$</span>
+              <span class="install-cmd__text">go get github.com/goldchell-bra7/gos1mple@v0.3.0</span>
+              <button class="install-cmd__copy" data-copy="go get github.com/goldchell-bra7/gos1mple@v0.3.0">Copy</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal__step">
+          <div class="modal__step-num">3</div>
+          <div class="modal__step-content">
+            <p>Import packages</p>
+            <div class="code-block">
+              <div class="code-block__header">
+                <div class="code-block__dots">
+                  <span class="code-block__dot code-block__dot--red"></span>
+                  <span class="code-block__dot code-block__dot--yellow"></span>
+                  <span class="code-block__dot code-block__dot--green"></span>
+                </div>
+                <span>main.go</span>
+                <button class="code-block__copy" data-copy>Copy</button>
+              </div>
+<pre><code><span class="kw">import</span> (
+    <span class="str">"github.com/goldchell-bra7/gos1mple/input"</span>
+    <span class="str">"github.com/goldchell-bra7/gos1mple/text"</span>
+    <span class="str">"github.com/goldchell-bra7/gos1mple/color"</span>
+)</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <a href="../install/" class="btn btn--secondary btn--sm">Full Guide</a>
+        <button class="btn btn--primary btn--sm" data-close-modal>Done</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
